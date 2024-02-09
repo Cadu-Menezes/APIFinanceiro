@@ -1,18 +1,20 @@
 const express = require('express')
 const router = express.Router()
+const { categoria } = require('../models')
 
-console.log("Chamou Categoria!")
 
 //
-router.get('/', (req, res) => {
-    res.send('Lista de Categorias')
+router.get('/lista', async(req, res) => {
+    const categorias = await categoria.findAll()
+    res.send(categorias)
 })
 
 //exemplo de requisição post
-router.post("/cadastro", (req, res) => {
-    const dados = req.body
-    console.log(dados)
-    res.send('POST - Registro de CATEGORIA')
+router.post("/cadastro", async(req, res) => {
+    const {categoriaid, categoriadescricao, categoriaentrada, categoriadata} = req.body
+    
+    await categoria.create({categoriaid, categoriadescricao, categoriaentrada, categoriadata})
+    res.send('categoria adicionada com sucesso!')
 })
 
 module.exports = router
