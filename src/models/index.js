@@ -1,4 +1,4 @@
-const sequelize = require('../config/sequelize') 
+const sequelize = require('../../src/config/sequelize') 
 const Sequelize = require('sequelize') 
 
 const Categoria = require('./categoria')

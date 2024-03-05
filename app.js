@@ -1,6 +1,6 @@
 const express = require('express')
-const routers = require('./API')
-const {sequelize} = require('./models')
+const routers = require('./src/API')
+const {sequelize} = require('./src/models')
 
 
 const app =  express()

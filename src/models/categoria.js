@@ -1,12 +1,13 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../config/sequelize");
+const sequelize = require("../../src/config/sequelize");
 
 const categoira = (sequelize, DataTypes) => {
 
     const Categoria = sequelize.define('Categoria', {
         
         categoriadescricao:{
-            type : DataTypes.STRING
+            type : DataTypes.STRING,
+            unique: true
         },
 
         categoriaentrada:{
