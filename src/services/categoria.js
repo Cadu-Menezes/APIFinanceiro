@@ -1,4 +1,5 @@
 class CategoriaService{
+   
     constructor(categoriaModel){
         this.categoria = categoriaModel
     }
@@ -8,8 +9,15 @@ class CategoriaService{
         return categorias
     }
 
-    async cadastrar(cursoDTO){
-        await this.categoria.create(cursoDTO)
+    async cadastrar(categoriaDTO){
+
+        try {
+            await this.categoria.create(categoriaDTO)
+        } catch (erro) {
+            console.erro(erro.message)
+            throw erro
+        }
+    
     }
 
 }
