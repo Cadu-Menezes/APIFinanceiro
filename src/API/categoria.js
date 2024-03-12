@@ -22,6 +22,8 @@ router.post("/cadastro",
     body('categoriadescricao').not().isEmpty().trim().escape(), 
     check('categoriadescricao').isLength({ min: 5 }).withMessage('Mínino de 5 dígitos'),
     
+    // body('categoriadata').not().isEmpty().trim().escape(), 
+
     async(req, res) => {
     
     //verificando se na req teve algum erro estourado pelo validador

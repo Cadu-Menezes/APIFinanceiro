@@ -3,8 +3,6 @@ const router = express.Router()
 
 const todasMovimentacoes = []
 
-console.log("Chamou movimentacao")
-
 //
 router.get('/', (req, res) => {
     res.send('Lista de Movimentações!')
